@@ -1,6 +1,6 @@
 import * as React from "react";
 import { fetchProducts } from "../api/products";
-import type { Product } from "../features/products/types";
+import type { Product } from "../types/products";
 
 export function useProducts(page: number, limit: number) {
     const [items, setItems] = React.useState<Product[]>([]);
