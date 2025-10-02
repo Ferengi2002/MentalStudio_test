@@ -1,15 +1,11 @@
-import axios from "axios";
-import type { LoginInput, LoginResponse } from ".";
+import { api } from "./http";
+import type { LoginInput, LoginResponse } from "./index";
 
-export async function login(data: LoginInput): Promise<LoginResponse & { accessToken?: string }> {
-    const resp = await axios.post(
-        "https://dummyjson.com/auth/login",
-        {
-            username: data.username.trim(),
-            password: data.password,
-            expiresInMins: 60,
-        },
-        { headers: { "Content-Type": "application/json" } }
-    );
+export async function login(data: LoginInput): Promise<LoginResponse> {
+    const resp = await api.post("/auth/login", {
+        username: data.username.trim(),
+        password: data.password,
+        expiresInMins: 60,
+    });
     return resp.data;
 }
