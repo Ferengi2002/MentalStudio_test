@@ -1,4 +1,4 @@
-import LoginForm from "../components/LoginForm";
+import LoginForm from "../../components/forms/LoginForm";
 
 export default function LoginPage() {
     return (
@@ -9,7 +9,7 @@ export default function LoginPage() {
 
                     <div className="brand-hero">
                         <h1 className="text-2xl font-extrabold leading-none">MentalStudio</h1>
-                        <p className="brand-sub">Acceso seguro a tu panel</p>
+                        <p className="brand-sub">Por: Juan Rengifo</p>
                     </div>
 
                     <p className="text-sm text-gray-400 mb-6 text-center">
@@ -17,10 +17,6 @@ export default function LoginPage() {
                     </p>
 
                     <LoginForm />
-
-                    <p className="mt-6 text-[11px] text-gray-500">
-                        Demo: <b>emilys</b> / <code>emilyspass</code>
-                    </p>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { LoginInput, LoginResponse } from "../types";
+import type { LoginInput, LoginResponse } from ".";
 
 export async function login(data: LoginInput): Promise<LoginResponse & { accessToken?: string }> {
     const resp = await axios.post(

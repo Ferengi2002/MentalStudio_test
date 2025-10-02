@@ -11,18 +11,17 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    "baseUrl": ".",
-    "paths": {
-      "@app/*": ["src/app/*"],
-      "@assets/*": ["src/assets/*"],
-      "@components/*": ["src/components/*"],
-      "@features/*": ["src/features/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@lib/*": ["src/lib/*"],
-      "@styles/*": ["src/styles/*"],
-      "@utils/*": ["src/utils/*"],
-      "@config/*": ["src/config/*"],
-      "@types/*": ["src/types/*"]
+    "baseUrl": "src",
+"paths": {
+      "@api/*": ["api/*"],
+      "@app/*": ["app/*"],
+      "@components/*": ["components/*"],
+      "@context/*": ["context/*"],
+      "@hooks/*": ["hooks/*"],
+      "@pages/*": ["pages/*"],
+      "@routes/*": ["routes/*"],
+      "@styles/*": ["styles/*"],
+      "@types/*": ["types/*"]
     },
 
     "types": ["vite/client"],

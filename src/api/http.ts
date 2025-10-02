@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getToken } from "@features/auth/context/AuthContext";
+import { getToken } from "../context/AuthContext";
 
 export const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE ?? "https://dummyjson.com",

@@ -5,7 +5,7 @@ import Button from "@components/ui/Button";
 import Input from "@components/ui/Input";
 import PasswordInput from "@components/ui/PasswordInput";
 import Loader from "@components/feedback/Loader";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
 

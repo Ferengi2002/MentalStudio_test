@@ -1,6 +1,6 @@
 import * as React from "react";
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import type { AuthUser, LoginResponse } from "../types";
+import type { AuthUser, LoginResponse } from '../types/auth';
 import { login as apiLogin } from "../api/login";
 
 type AuthState = {
