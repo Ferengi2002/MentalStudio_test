@@ -1,0 +1,340 @@
+@import "tailwindcss";
+
+/* =========================================================
+   Base
+   =======================================================*/
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  background-color: #f9fafb;
+  color: #1a202c;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0b0b10;
+    color: #f5f5f5;
+  }
+}
+
+/* =========================================================
+   Controles
+   =======================================================*/
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  background-color: #4f46e5;
+  color: #fff;
+  opacity: 1;
+  transition: transform .08s ease, box-shadow .2s ease, background-color .15s ease;
+}
+
+.btn-primary:hover {
+  background-color: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(79, 70, 229, .35);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 14px rgba(79, 70, 229, .25);
+}
+
+.btn-primary:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.input {
+  width: 100%;
+  border-radius: .75rem;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  padding: .5rem .75rem;
+  outline: none;
+  transition: box-shadow .2s, border-color .2s;
+}
+
+.input:focus {
+  box-shadow: 0 0 0 2px #6366f1;
+  border-color: #6366f1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .input {
+    background-color: #262626;
+    border-color: #262626;
+    color: #f5f5f5;
+  }
+}
+
+/* =========================================================
+   Layout & Card
+   =======================================================*/
+.bg-mesh {
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(99, 102, 241, .35), transparent 50%),
+    radial-gradient(1000px 500px at 110% 10%, rgba(236, 72, 153, .35), transparent 55%),
+    radial-gradient(800px 400px at 50% 120%, rgba(56, 189, 248, .28), transparent 60%),
+    #0b0b10;
+  position: relative;
+}
+
+.bg-mesh::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Ccircle cx='1' cy='1' r='1' fill='%23ffffff0d'/%3E%3C/svg%3E");
+  background-size: 12px 12px;
+  opacity: .25;
+  pointer-events: none;
+  mask-image: radial-gradient(50% 50% at 50% 50%, #000 60%, transparent 100%);
+}
+
+.glass-hero {
+  backdrop-filter: blur(14px) saturate(120%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .05));
+  border: 1px solid rgba(255, 255, 255, .16);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, .45);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.fade-up {
+  animation: fadeUp .45s ease both;
+}
+
+/* =========================================================
+   Encabezado del card
+   =======================================================*/
+.brand-hero {
+  position: relative;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: .25rem;
+}
+
+.brand-hero::before {
+  content: "";
+  position: absolute;
+  inset: -40px 0 auto 0;
+  height: 120px;
+  margin: auto;
+  width: 220px;
+  border-radius: 999px;
+  background:
+    radial-gradient(closest-side, rgba(99, 102, 241, .55), transparent 70%),
+    radial-gradient(closest-side, rgba(236, 72, 153, .45), transparent 70%);
+  filter: blur(24px);
+  transform: translateY(-10px);
+  opacity: .9;
+  pointer-events: none;
+}
+
+.brand-sub {
+  text-align: center;
+  font-size: .8rem;
+  color: #a3a3a3;
+  margin-top: .25rem;
+}
+
+/* =========================================================
+   Detalles del formulario
+   =======================================================*/
+.btn-shine:hover {
+  box-shadow: 0 10px 30px rgba(79, 70, 229, .35);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  color: #9ca3af;
+  font-size: .875rem;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1 1 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .25), transparent);
+}
+
+@media (prefers-color-scheme: dark) {
+  .divider {
+    color: #6b7280;
+  }
+
+  .divider::before,
+  .divider::after {
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, .25), transparent);
+  }
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon input {
+  padding-left: 2.5rem;
+}
+
+.input-icon .ix {
+  position: absolute;
+  left: .65rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.form-aux {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .82rem;
+  color: #a3a3a3;
+}
+
+.switch {
+  appearance: none;
+  width: 40px;
+  height: 22px;
+  border-radius: 999px;
+  background: #3f3f46;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: background .15s;
+}
+
+.switch::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #fff;
+  transition: left .15s;
+}
+
+.switch:checked {
+  background: #6366f1;
+}
+
+.switch:checked::after {
+  left: 21px;
+}
+
+@keyframes shakeX {
+
+  0%,
+  100% {
+    transform: translateX(0)
+  }
+
+  20% {
+    transform: translateX(-6px)
+  }
+
+  40% {
+    transform: translateX(6px)
+  }
+
+  60% {
+    transform: translateX(-4px)
+  }
+
+  80% {
+    transform: translateX(4px)
+  }
+}
+
+.shake {
+  animation: shakeX .35s ease;
+}
+
+/* =========================================================
+   Sociales (ícono-only)
+   =======================================================*/
+.social-row {
+  display: flex;
+  justify-content: center;
+  gap: .75rem;
+}
+
+.social-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .12);
+  color: #e5e7eb;
+  transition: transform .12s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+  outline: 0;
+}
+
+.social-btn svg {
+  opacity: .9;
+  transition: transform .12s ease, opacity .12s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: rgba(255, 255, 255, .10);
+  border-color: rgba(255, 255, 255, .22);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, .28);
+}
+
+.social-btn:hover svg {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.social-btn:active {
+  transform: translateY(0) scale(1);
+}
+
+.social-btn.google:hover {
+  box-shadow: 0 10px 34px rgba(234, 67, 53, .35);
+}
+
+.social-btn.github:hover {
+  box-shadow: 0 10px 34px rgba(0, 0, 0, .45);
+}
+
+.social-btn.facebook:hover {
+  box-shadow: 0 10px 34px rgba(24, 119, 242, .35);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
